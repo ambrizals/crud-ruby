@@ -33,12 +33,13 @@ class CategoriesController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @category.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
 
   # PATCH/PUT /categories/1
-  # PATCH/PUT /categories/1.json
+  # PATCH/PUT /categories/
   def update
     respond_to do |format|
       if @category.update(category_params)

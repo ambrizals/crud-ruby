@@ -1,0 +1,8 @@
+<% if @post.errors.any? %>
+    <% @post.errors.each do |f, m| %>
+        var error_field = "<div class='error-message alert alert-danger alert-small'><%= m %></div>"
+        $('form').find('#post_<%= f %>').after(error_field);
+    <% end %>
+<% else %>
+    console.log('success');
+<% end %>
